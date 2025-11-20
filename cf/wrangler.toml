@@ -1,0 +1,13 @@
+# Cloudflare Worker Configuration
+name = "contact-form-worker"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables
+# Set DISCORD_WEBHOOK_URL in Cloudflare dashboard or via wrangler
+# wrangler secret put DISCORD_WEBHOOK_URL
+
+# Optional: Add custom domain
+# routes = [
+#   { pattern = "contact.lkang.au/*", zone_name = "lkang.au" }
+# ]
