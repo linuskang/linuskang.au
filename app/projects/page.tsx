@@ -5,7 +5,7 @@ const projects: (ProjectProps & { tag: string })[] = [
     {
         tag: "project",
         name: "Bubbly Maps",
-        description: "Open source bubbler map. Open Code. Open Data.",
+        description: "Locate water fountains near you anywhere. Open Code, Open Data.",
         href: "https://bubblymaps.org",
     },
     {
@@ -24,7 +24,7 @@ export default function Projects() {
                 <Header />
 
                 <h1 className="font-semibold text-xl">Projects</h1>
-                <p className="text-sm text-neutral-400 mb-7">
+                <p className="text-sm text-neutral-400 mb-7 mt-2">
                     My personal and open source projects.
                 </p>
                 <div className="flex flex-col divide-y divide-neutral-800 mb-6">

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Header from "@/components/header";
+import MailingListJoin from "@/components/mailing-list-join";
 
 export default function Home() {
   return (
@@ -10,50 +11,34 @@ export default function Home() {
 
         <h1 className="text-xl font-semibold mt-4">Linus Kang</h1>
 
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-neutral-400 mb-0">
           <br />
 
-          Hello! Currently a student specialising in AI and web development. I'm currently participating annually in First Lego League with {" "}
-          <a
-            href="https://bleulegs.au"
+          Hello! I'm currently a student specialising in AI and web dev with Next.js and React. I run my own {" "} <a
+            href="/blog"
             className="text-sm font-medium text-neutral-200 hover:text-neutral-300 transition-colors duration-200"
           >
-            Team Bleulegs
-          </a>
-          {" "} and I love building apps.
+            blog
+          </a> and contribute to various projects on GitHub.
 
           <br />
           <br />
 
-          Besides programming apps, I love developing my skills in AI and learning how to integrate them into my projects. I'm also a big fan of open source.
-          <br />
-          <br />
-
-          You can download my resume here:
+          You can view & download my resume <a
+            href="https://lkang.au/cv"
+            className="text-sm font-medium text-neutral-200 hover:text-neutral-300 transition-colors duration-200"
+          >
+            here
+          </a>.
         </p>
 
-        <div className="mt-3 mb-0">
-          <a
-            href="https://lkang.au/resume.pdf"
-            download
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5
-               bg-neutral-900 text-neutral-100
-               rounded-md text-xs font-medium
-               hover:bg-neutral-800
-               transition-colors border border-neutral-700/50
-               shadow-sm"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="size-3.5"
-              fill="currentColor"
-            >
-              <path d="M12 16.75c-.2 0-.39-.08-.53-.22l-5-5a.75.75 0 1 1 1.06-1.06l3.72 3.72V3.75a.75.75 0 0 1 1.5 0v10.44l3.72-3.72a.75.75 0 0 1 1.06 1.06l-5 5c-.14.14-.33.22-.53.22z" />
-              <path d="M4.75 19.25h14.5a.75.75 0 0 0 .75-.75v-4.5a.75.75 0 0 1 1.5 0v4.5A2.25 2.25 0 0 1 19.25 21H4.75A2.25 2.25 0 0 1 2.5 18.5v-4.5a.75.75 0 0 1 1.5 0v4.5c0 .41.34.75.75.75z" />
-            </svg>
-            Download Resume
-          </a>
-        </div>
+        <h2 className="text-lg font-semibold mb-3 mt-4 text-neutral-100">
+          Join my Newsletter
+        </h2>
+        <p className="text-sm text-neutral-400 mb-4">
+          I also run a newsletter where I share updates about my projects and blogs.
+        </p>
+        <MailingListJoin />
 
         <p className="text-sm text-neutral-400 mt-5">
           Creator of{" "}
