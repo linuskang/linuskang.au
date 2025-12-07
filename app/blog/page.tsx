@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import Header from "@/components/header";
 import { getAllPosts } from "@/lib/blog";
 import BlogList from "@/components/blog-list";
@@ -22,7 +23,9 @@ export default async function BlogPage() {
           </p>
         </div>
 
-        <BlogList posts={posts} />
+        <Suspense fallback={<div className="text-sm text-neutral-500">Loading posts…</div>}>
+          <BlogList posts={posts} />
+        </Suspense>
       </article>
     </div>
   );

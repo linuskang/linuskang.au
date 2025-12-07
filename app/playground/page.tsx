@@ -12,6 +12,11 @@ const experiments = [
     description: "Generate and copy color hex codes quickly.",
     href: "/playground/color-generator",
   },
+  {
+    title: "Physics Simulator",
+    description: "A simple physics simulation using Matter.js.",
+    href: "/playground/physics-sim",
+  }
 ];
 
 export default function PlaygroundIndex() {
