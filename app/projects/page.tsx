@@ -1,5 +1,8 @@
+"use client";
+
 import Header from "@/components/header";
 import type { ProjectProps } from "@/types/projects";
+import { useLanguage } from "@/contexts/language-context";
 
 const projects: (ProjectProps & { tag: string })[] = [
     {
@@ -17,22 +20,32 @@ const projects: (ProjectProps & { tag: string })[] = [
 ];
 
 export default function Projects() {
+    const { t } = useLanguage();
+    
     return (
         <div className="flex items-start justify-center min-h-screen px-4">
             <article className="max-w-lg w-full">
 
                 <Header />
 
-                <h1 className="font-semibold text-xl">Projects</h1>
+                <h1 className="font-semibold text-xl">{t("projects.title")}</h1>
                 <p className="text-sm text-neutral-400 mb-7 mt-2">
-                    My personal and open source projects.
+                    {t("projects.description")}
                 </p>
                 <div className="flex flex-col divide-y divide-neutral-800 mb-6">
                     {projects
                         .filter((p) => p.tag === "project")
-                        .map((p) => (
-                            <Project key={p.href} {...p} />
-                        ))}
+                        .map((p, index) => {
+                            const translationKey = index === 0 ? "bubblymaps" : "website";
+                            return (
+                                <Project 
+                                    key={p.href} 
+                                    name={t(`projects.items.${translationKey}.name`)}
+                                    description={t(`projects.items.${translationKey}.description`)}
+                                    href={p.href}
+                                />
+                            );
+                        })}
                 </div>
 
             </article>

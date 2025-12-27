@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Header from "@/components/header";
 import { getAllPosts } from "@/lib/blog";
 import BlogList from "@/components/blog-list";
+import BlogPageClient from "@/components/blog-page-client";
 
 export const metadata = {
   title: "Blog - Linus Kang",
@@ -16,16 +17,11 @@ export default async function BlogPage() {
       <article className="max-w-lg w-full">
         <Header />
 
-        <div className="mb-6">
-          <h1 className="text-xl font-semibold mt-4 mb-2">Blog</h1>
-          <p className="text-sm text-neutral-400">
-            My thoughts on programming, AI, and technology.
-          </p>
-        </div>
-
-        <Suspense fallback={<div className="text-sm text-neutral-500">Loading posts…</div>}>
-          <BlogList posts={posts} />
-        </Suspense>
+        <BlogPageClient>
+          <Suspense fallback={<div className="text-sm text-neutral-500">Loading posts…</div>}>
+            <BlogList posts={posts} />
+          </Suspense>
+        </BlogPageClient>
       </article>
     </div>
   );

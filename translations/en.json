@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "playground": "Playground",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Linus Kang",
+    "intro": "Hello! I'm currently a student specialising in AI and web dev with Next.js and React. I run my own",
+    "blog": "blog",
+    "and": "and contribute to various projects on GitHub.",
+    "resume": "You can view & download my resume",
+    "here": "here",
+    "newsletter": {
+      "title": "Join my Newsletter",
+      "description": "I also run a newsletter where I share updates about my projects and blogs."
+    },
+    "creator": "Creator of",
+    "badges": {
+      "github": "Github",
+      "discord": "Discord",
+      "email": "Email"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "My thoughts on programming, AI, and technology.",
+    "loading": "Loading posts…"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "My personal and open source projects.",
+    "items": {
+      "bubblymaps": {
+        "name": "Bubbly Maps",
+        "description": "Locate water fountains near you anywhere. Open Code, Open Data."
+      },
+      "website": {
+        "name": "This website",
+        "description": "My portfolio and blogging website."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a question? Feel free to reach out.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Sent!",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again."
+    }
+  },
+  "playground": {
+    "title": "Playground",
+    "description": "A collection of experiments and interactive demos.",
+    "items": {
+      "colorGenerator": {
+        "name": "Color Generator",
+        "description": "Generate beautiful color palettes with AI"
+      },
+      "physicsSim": {
+        "name": "Physics Simulation",
+        "description": "Interactive physics simulation with Matter.js"
+      }
+    }
+  },
+  "mailingList": {
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "subscribed": "Subscribed!",
+    "successMessage": "Successfully subscribed!",
+    "errorMessage": "Failed to subscribe. Please try again."
+  }
+}
