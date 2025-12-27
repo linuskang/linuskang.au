@@ -16,7 +16,7 @@ export default function Header() {
     ];
 
     return (
-        <div className="flex flex-col items-center mb-4">
+        <div className="flex flex-col items-center mb-4 gap-3">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-4">
 
@@ -31,8 +31,8 @@ export default function Header() {
 
             </div>
 
-            <div className="flex items-center gap-4">
-              <nav className="flex gap-4">
+            <div className="flex items-center gap-3">
+              <nav className="hidden sm:flex gap-3 md:gap-4">
                 {navItems.map((item) => {
                   const isActive = pathname === item.href;
                   return (
@@ -55,6 +55,26 @@ export default function Header() {
             </div>
 
           </div>
+          
+          {/* Mobile navigation */}
+          <nav className="flex sm:hidden gap-3 w-full justify-center">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`text-xs font-medium transition-transform transform hover:scale-105 ${
+                    isActive
+                      ? "text-neutral-100"
+                      : "text-neutral-400 hover:text-neutral-200"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
         </div>
     )
 }

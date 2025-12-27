@@ -1,23 +1,28 @@
 "use client";
 
 import { useLanguage } from "@/contexts/language-context";
-import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "zh" : "en");
+  const handleToggle = (checked: boolean) => {
+    setLanguage(checked ? "zh" : "en");
   };
 
   return (
-    <Button
-      onClick={toggleLanguage}
-      variant="outline"
-      size="sm"
-      className="text-xs font-medium bg-neutral-900 border-neutral-700/50 text-neutral-200 hover:bg-neutral-800 hover:text-neutral-100"
-    >
-      {language === "en" ? "中文" : "EN"}
-    </Button>
+    <div className="flex items-center gap-2 shrink-0">
+      <span className={`text-xs font-medium transition-colors ${language === "en" ? "text-neutral-200" : "text-neutral-500"}`}>
+        EN
+      </span>
+      <Switch
+        checked={language === "zh"}
+        onCheckedChange={handleToggle}
+        className="data-[state=checked]:bg-blue-500 data-[state=unchecked]:bg-neutral-700"
+      />
+      <span className={`text-xs font-medium transition-colors ${language === "zh" ? "text-neutral-200" : "text-neutral-500"}`}>
+        中文
+      </span>
+    </div>
   );
 }
