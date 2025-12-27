@@ -1,6 +1,8 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import enTranslations from "@/translations/en.json";
+import zhTranslations from "@/translations/zh.json";
 
 type Language = "en" | "zh";
 
@@ -12,28 +14,36 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+const translations = {
+  en: enTranslations,
+  zh: zhTranslations,
+};
 
-  // Load language preference from localStorage on mount
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language;
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "zh")) {
-      setLanguageState(savedLanguage);
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguageState] = useState<Language>(() => {
+    // Initialize from localStorage if available
+    if (typeof window !== "undefined") {
+      const savedLanguage = localStorage.getItem("language") as Language;
+      if (savedLanguage && (savedLanguage === "en" || savedLanguage === "zh")) {
+        return savedLanguage;
+      }
     }
-  }, []);
+    return "en";
+  });
 
   // Save language preference to localStorage whenever it changes
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem("language", lang);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", lang);
+    }
   };
 
   // Simple translation function
   const t = (key: string): string => {
-    const translations = require(`@/translations/${language}.json`);
     const keys = key.split(".");
-    let value: any = translations;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let value: any = translations[language];
     
     for (const k of keys) {
       value = value?.[k];

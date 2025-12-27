@@ -20,7 +20,7 @@ const projects: (ProjectProps & { tag: string })[] = [
 ];
 
 export default function Projects() {
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
     
     return (
         <div className="flex items-start justify-center min-h-screen px-4">
