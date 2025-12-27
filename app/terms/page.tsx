@@ -15,14 +15,14 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-lg font-semibold text-neutral-100 mb-3">1. Acceptance of Terms</h2>
             <p className="mb-3">
-              By accessing and using any services provided by Linus Kang, including but not limited to websites and applications at bubblymaps.org, linuskang.au, linus.id.au, lkang.au, and any other related domains or services (collectively, the "Services"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Services.
+              By accessing and using any services provided by Linus Kang, including but not limited to websites and applications at bubblymaps.org, linuskang.au, linus.id.au, lkang.au, and any other related domains or services (collectively, the &quot;Services&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Services.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-neutral-100 mb-3">2. Services Provided "As Is"</h2>
+            <h2 className="text-lg font-semibold text-neutral-100 mb-3">2. Services Provided &quot;As Is&quot;</h2>
             <p className="mb-3">
-              All Services are provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. I make no warranty that the Services will be uninterrupted, timely, secure, or error-free.
+              All Services are provided on an &quot;as is&quot; and &quot;as available&quot; basis without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. I make no warranty that the Services will be uninterrupted, timely, secure, or error-free.
             </p>
           </section>
 

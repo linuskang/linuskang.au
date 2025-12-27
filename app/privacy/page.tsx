@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-lg font-semibold text-neutral-100 mb-3">1. Introduction</h2>
             <p className="mb-3">
-              This Privacy Policy explains how Linus Kang ("I", "me", or "my") collects, uses, and protects information when you use any services provided at bubblymaps.org, linuskang.au, linus.id.au, lkang.au, and any other related domains or services (collectively, the "Services"). By using the Services, you consent to the data practices described in this policy.
+              This Privacy Policy explains how Linus Kang (&quot;I&quot;, &quot;me&quot;, or &quot;my&quot;) collects, uses, and protects information when you use any services provided at bubblymaps.org, linuskang.au, linus.id.au, lkang.au, and any other related domains or services (collectively, the &quot;Services&quot;). By using the Services, you consent to the data practices described in this policy.
             </p>
           </section>
 
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-neutral-100 mb-3">9. Children's Privacy</h2>
+            <h2 className="text-lg font-semibold text-neutral-100 mb-3">9. Children&apos;s Privacy</h2>
             <p className="mb-3">
               The Services are not intended for children under the age of 13. I do not knowingly collect personal information from children under 13. If you believe I have collected information from a child under 13, please contact me immediately.
             </p>
