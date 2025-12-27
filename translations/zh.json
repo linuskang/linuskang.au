@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "blog": "博客",
+    "playground": "游乐场",
+    "projects": "项目",
+    "contact": "联系"
+  },
+  "home": {
+    "title": "Linus Kang",
+    "intro": "你好！我目前是一名专注于人工智能和使用Next.js和React进行网页开发的学生。我运营自己的",
+    "blog": "博客",
+    "and": "，并在GitHub上为各种项目做出贡献。",
+    "resume": "您可以在这里查看和下载我的简历",
+    "here": "这里",
+    "newsletter": {
+      "title": "订阅我的简报",
+      "description": "我还运营一个简报，在其中分享有关我的项目和博客的更新。"
+    },
+    "creator": "创建者",
+    "badges": {
+      "github": "Github",
+      "discord": "Discord",
+      "email": "电子邮件"
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "description": "我对编程、人工智能和技术的思考。",
+    "loading": "加载中…"
+  },
+  "projects": {
+    "title": "项目",
+    "description": "我的个人和开源项目。",
+    "items": {
+      "bubblymaps": {
+        "name": "Bubbly Maps",
+        "description": "在您附近的任何地方找到饮水机。开放代码，开放数据。"
+      },
+      "website": {
+        "name": "这个网站",
+        "description": "我的作品集和博客网站。"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系",
+    "description": "有问题吗？欢迎联系。",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "您的姓名",
+      "email": "电子邮件",
+      "emailPlaceholder": "your@email.com",
+      "message": "消息",
+      "messagePlaceholder": "您的消息...",
+      "submit": "发送消息",
+      "submitting": "发送中...",
+      "success": "已发送！",
+      "successMessage": "消息发送成功！",
+      "errorMessage": "发送失败。请重试。"
+    }
+  },
+  "playground": {
+    "title": "游乐场",
+    "description": "实验和互动演示的集合。",
+    "items": {
+      "colorGenerator": {
+        "name": "颜色生成器",
+        "description": "使用AI生成美丽的调色板"
+      },
+      "physicsSim": {
+        "name": "物理模拟",
+        "description": "使用Matter.js的交互式物理模拟"
+      }
+    }
+  },
+  "mailingList": {
+    "emailPlaceholder": "输入您的电子邮件",
+    "subscribe": "订阅",
+    "subscribing": "订阅中...",
+    "subscribed": "已订阅！",
+    "successMessage": "订阅成功！",
+    "errorMessage": "订阅失败。请重试。"
+  }
+}

@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,20 +50,20 @@ export default function Contact() {
       <article className="max-w-lg w-full">
         <Header />
 
-        <h1 className="text-xl font-semibold mt-4">Contact</h1>
+        <h1 className="text-xl font-semibold mt-4">{t("contact.title")}</h1>
         <p className="text-sm text-neutral-400 mt-2">
-          Have a question? Feel free to reach out.
+          {t("contact.description")}
         </p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div className="space-y-2">
             <Label htmlFor="name" className="text-sm font-medium text-neutral-300">
-              Name
+              {t("contact.form.name")}
             </Label>
             <Input
               id="name"
               type="text"
-              placeholder="Your name"
+              placeholder={t("contact.form.namePlaceholder")}
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
@@ -71,12 +73,12 @@ export default function Contact() {
 
           <div className="space-y-2">
             <Label htmlFor="email" className="text-sm font-medium text-neutral-300">
-              Email
+              {t("contact.form.email")}
             </Label>
             <Input
               id="email"
               type="email"
-              placeholder="your@email.com"
+              placeholder={t("contact.form.emailPlaceholder")}
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -86,11 +88,11 @@ export default function Contact() {
 
           <div className="space-y-2">
             <Label htmlFor="message" className="text-sm font-medium text-neutral-300">
-              Message
+              {t("contact.form.message")}
             </Label>
             <Textarea
               id="message"
-              placeholder="Your message..."
+              placeholder={t("contact.form.messagePlaceholder")}
               rows={6}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -104,17 +106,17 @@ export default function Contact() {
             disabled={status === "submitting"}
             className="w-full bg-neutral-100 text-neutral-900 hover:bg-neutral-200 font-medium"
           >
-            {status === "submitting" ? "Sending..." : status === "success" ? "Sent!" : "Send Message"}
+            {status === "submitting" ? t("contact.form.submitting") : status === "success" ? t("contact.form.success") : t("contact.form.submit")}
           </Button>
 
           {status === "success" && (
             <p className="text-sm text-green-400 text-center">
-              Message sent successfully!
+              {t("contact.form.successMessage")}
             </p>
           )}
           {status === "error" && (
             <p className="text-sm text-red-400 text-center">
-              Failed to send message. Please try again.
+              {t("contact.form.errorMessage")}
             </p>
           )}
         </form>

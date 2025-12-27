@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function MailingListJoin() {
+    const { t } = useLanguage();
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [message, setMessage] = useState("");
@@ -28,18 +30,18 @@ export default function MailingListJoin() {
             if (response.ok) {
                 setStatus("success");
                 setEmail("");
-                setMessage("Successfully joined!");
+                setMessage(t("mailingList.successMessage"));
                 setTimeout(() => setStatus("idle"), 3000);
             } else {
                 const data = await response.json();
                 setStatus("error");
-                setMessage(data.message || "Failed to subscribe. Please try again.");
+                setMessage(data.message || t("mailingList.errorMessage"));
                 setTimeout(() => setStatus("idle"), 3000);
             }
         } catch (error) {
             console.error("Subscription error:", error);
             setStatus("error");
-            setMessage("An error occurred. Please try again.");
+            setMessage(t("mailingList.errorMessage"));
             setTimeout(() => setStatus("idle"), 3000);
         }
     };
@@ -49,7 +51,7 @@ export default function MailingListJoin() {
             <div className="flex gap-2">
                 <Input
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder={t("mailingList.emailPlaceholder")}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -61,7 +63,7 @@ export default function MailingListJoin() {
                     disabled={status === "submitting"}
                     className="bg-neutral-100 text-neutral-900 hover:bg-neutral-200 font-medium px-4"
                 >
-                    {status === "submitting" ? "…" : "Join"}
+                    {status === "submitting" ? t("mailingList.subscribing") : status === "success" ? t("mailingList.subscribed") : t("mailingList.subscribe")}
                 </Button>
             </div>
 

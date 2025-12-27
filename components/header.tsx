@@ -1,15 +1,18 @@
 "use client";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/contexts/language-context";
+import LanguageToggle from "@/components/language-toggle";
 
 export default function Header() {
     const pathname = usePathname();
+    const { t } = useLanguage();
 
     const navItems = [
-      { href: "/blog", label: "Blog" },
-      { href: "/playground", label: "Playground" },
-      { href: "/projects", label: "Projects" },
-      { href: "/contact", label: "Contact" },
+      { href: "/blog", label: t("nav.blog") },
+      { href: "/playground", label: t("nav.playground") },
+      { href: "/projects", label: t("nav.projects") },
+      { href: "/contact", label: t("nav.contact") },
     ];
 
     return (
@@ -28,24 +31,28 @@ export default function Header() {
 
             </div>
 
-            <nav className="flex gap-4">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className={`text-sm font-medium transition-transform transform hover:scale-105 ${
-                      isActive
-                        ? "text-neutral-100"
-                        : "text-neutral-400 hover:text-neutral-200"
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                );
-              })}
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="flex gap-4">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className={`text-sm font-medium transition-transform transform hover:scale-105 ${
+                        isActive
+                          ? "text-neutral-100"
+                          : "text-neutral-400 hover:text-neutral-200"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+              </nav>
+
+              <LanguageToggle />
+            </div>
 
           </div>
         </div>
