@@ -52,6 +52,13 @@ body {
   transform: scale(1.15);
 }
 
+.navbtn {
+  background-color: var(--color-blue);
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-3xl);
+  transition: transform 0.1s ease;
+}
+
 .link {
   background-color: var(--color-blue);
   padding: 0.3rem 0.5rem;
