@@ -79,3 +79,14 @@ body {
 .link-2:hover {
   transform: scale(1.05);
 }
+
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-sapphire);
+}
+
+.underline:hover {
+  text-decoration: none;
+}

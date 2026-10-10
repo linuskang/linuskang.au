@@ -7,8 +7,14 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
@@ -22,6 +28,7 @@
     --color-crust: #11111b;
     --color-primary: #cdd6f4;
     --color-muted: #bac2de;
+    --color-sapphire: #74c7ec;
     --color-blue: #89b4fa;
     --color-pink: #cba6f7;
   }
@@ -196,6 +203,9 @@
   .inline-block {
     display: inline-block;
   }
+  .inline-flex {
+    display: inline-flex;
+  }
   .table {
     display: table;
   }
@@ -223,6 +233,12 @@
   .w-full {
     width: 100%;
   }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
   .flex-1 {
     flex: 1;
   }
@@ -240,6 +256,9 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .items-baseline {
+    align-items: baseline;
   }
   .items-center {
     align-items: center;
@@ -283,12 +302,23 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
   .text-muted {
     color: var(--color-muted);
+  }
+  .text-sapphire {
+    color: var(--color-sapphire);
   }
   .italic {
     font-style: italic;
@@ -346,6 +376,15 @@ body {
 }
 .link-2:hover {
   transform: scale(1.05);
+}
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-sapphire);
+}
+.underline:hover {
+  text-decoration: none;
 }
 @property --tw-rotate-x {
   syntax: "*";
