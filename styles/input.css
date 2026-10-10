@@ -22,6 +22,7 @@
   --color-sky: #89dceb;
   --color-sapphire: #74c7ec;
   --color-blue: #89b4fa;
+  --color-pink: #cba6f7;
 
   --color-border: #45475a;
 
@@ -52,13 +53,6 @@ body {
   transform: scale(1.15);
 }
 
-.navbtn {
-  background-color: var(--color-blue);
-  padding: 0.3rem 0.5rem;
-  border-radius: var(--radius-3xl);
-  transition: transform 0.1s ease;
-}
-
 .link {
   background-color: var(--color-blue);
   padding: 0.3rem 0.5rem;
@@ -70,4 +64,18 @@ body {
 
 .link:hover {
   transform: scale(1.1);
+}
+
+.link-2 {
+  background-color: var(--color-pink);
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+  color: var(--color-crust);
+  border-radius: var(--radius-3xl);
+  transition: transform 0.1s ease;
+  align-items: center;
+}
+
+.link-2:hover {
+  transform: scale(1.05);
 }
